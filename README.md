@@ -1,11 +1,11 @@
-Project Overview: IPL Score Prediction
-Description
+# Project Overview: IPL Score Prediction
+## Description
 The IPL Score Prediction project is a machine learning-based solution designed to predict the final score of an Indian Premier League (IPL) cricket match based on key match statistics. The project leverages historical IPL match data to train predictive models, enabling users to estimate a team's total score after the first innings, given specific inputs such as the batting team, bowling team, overs completed, runs scored, wickets lost, and performance in the last 5 overs.
 
-Objective
+## Objective
 The primary goal is to build an accurate and reliable model for predicting IPL match scores, which can be useful for cricket enthusiasts, analysts, and fantasy league players. The project explores two machine learning approaches—Random Forest Regression and AdaBoost Regression with Linear Regression as the base estimator—to determine the most effective method for score prediction.
 
-Dataset
+## Dataset
 The dataset (ipl.csv) contains ball-by-ball IPL match data with the following key features:
 
 date: Match date
@@ -19,7 +19,7 @@ wickets_last_5: Wickets lost in the last 5 overs
 total: Final innings score (target variable)
 The dataset initially consists of 76,014 rows and 15 columns, which is preprocessed to focus on consistent teams and data after 5 overs, reducing it to 40,108 rows.
 
-Data Preprocessing
+## Data Preprocessing
 The code performs several preprocessing steps to prepare the data for modeling:
 
 Column Removal: Drops irrelevant columns (mid, venue, batsman, bowler, striker, non-striker) to focus on team-level statistics.
@@ -30,7 +30,7 @@ Encoding: Applies one-hot encoding to bat_team and bowl_team columns to convert 
 Modeling
 Two regression models are implemented and evaluated:
 
-Random Forest Regressor:
+## Random Forest Regressor:
 A robust ensemble method using multiple decision trees.
 Evaluation Metrics:
 Mean Absolute Error (MAE): 13.82
@@ -45,7 +45,7 @@ RMSE: 15.74
 Chosen as the final model due to better performance (lower error metrics).
 The dataset is split into training (80%) and testing (20%) sets, with features (X) including encoded team data and match statistics, and the target variable (y) being the total score.
 
-Prediction Function
+## Prediction Function
 A custom predict_score function is implemented using the AdaBoost model. It takes the following inputs:
 
 batting_team: Name of the batting team
